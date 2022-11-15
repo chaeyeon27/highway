@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>멈춤의 미학</title>
+	 <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+	<style type="text/css">
+		@font-face {
+    font-family: 'LeferiPoint-WhiteObliqueA';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2201-2@1.0/LeferiPoint-WhiteObliqueA.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+		body,p{
+		margin: 0 auto;
+			font-family: 'LeferiPoint-WhiteObliqueA';
+		
+		}
+
+		body{
+			background: #000000;
+			background-image: url("back-pt.svg");
+			background-repeat: repeat-x;
+
+
+
+			
+		}
+
+		#container{
+			margin: 0 auto;
+			width: 1400px;
+			position: relative;
+			perspective: 300px;
+			background: beige;
+			
+		}
+
+		.ticker{
+			position: absolute; overflow: hidden;		
+		}
+
+		#ticker1{
+
+			border: 1px solid #97FFF9;
+			background: black;
+			color: #97FFF9;
+			left: 0px;
+			top: 0px;
+			width: 800px;
+			height: 6rem;
+			font-size: 4rem;
+			line-height: 6.3rem;
+			text-align: center;
+			transform: translateX(300px) rotateX(90deg) rotateZ(90deg);
+			opacity: 0.7;
+			z-index: 1;
+
+		}
+
+		#ticker2{
+			color: #97FFF9;
+			left: 0px;
+			top: 0px;
+			transform: translateX(-100px) translateY(200px)  rotateY(90deg) rotateZ(90deg);
+			width: 800px;
+			height: 6rem;
+			font-size: 4rem;
+			line-height: 6.3rem;
+			border: 1px solid #97FFF9;
+			text-align: center;
+			z-index: 3;
+/*			border-radius: 0.6em;*/
+		}
+
+		#ticker3{
+			color: #97FFF9;
+			left: 0px;
+			top: 0px;
+			width: 800px;
+			height: 6rem;
+			font-size: 4rem;
+			line-height: 6.3rem;
+			border: 1px solid #97FFF9;
+			text-align: center;
+			transform: translate(300px, 600px) rotateX(90deg);
+			z-index: 8;
+/*			border-radius: 0.6em;*/
+		}
+
+		#ticker4{
+			color: #97FFF9;
+			left: 0px;
+			top: 0px;
+			transform: scaleY(-1) translateY(-200px) translateX(700px) rotateY(90deg) rotateZ(90deg);
+			width: 800px;
+			height: 6rem;
+			font-size: 4rem;
+			line-height: 6.3rem;
+			border: 1px solid #97FFF9;
+			text-align: center;
+			z-index: 3;
+/*			border-radius: 0.6em;*/
+		}
+
+		#introText{
+			position: absolute;
+			left: 50%;
+			top: 300px;
+			transform: translate(-50%, 0%);
+			z-index: 10;
+			animation: fadein 1s linear;
+		}
+
+
+		@keyframes fadein{
+					  from {
+					        opacity: 0;
+					    }
+					    to {
+					        opacity: 1;
+					    }
+				}
+
+		@keyframes fadeout20{
+					0%{opacity: 1;}
+					20%{opacity: 0;}
+					80%{opacity: 0;}
+					100%{opacity: 1;}
+				}
+
+		@keyframes tickerfadeout{
+					0%{opacity: 1;}
+					20%{opacity: 0;}
+					80%{opacity: 0;}
+					100%{opacity: 0;}
+				}
+		
+
+
+		#text1{
+			position: absolute;
+			left: 50%;
+			top: 300px;
+			transform: translate(-50%, 0%);
+			color: white;
+			z-index: 10;
+			animation: fadein 1s linear;
+		}
+
+		#footer{
+			color: white;
+			position: absolute;
+			left: 50%;
+			bottom: 30px;
+			transform: translate(-50%, 0%);
+			color: white;
+			opacity: 0.7;
+		}
+
+		#himg1, #himg2{
+			position: absolute;
+			bottom: 50px;
+			opacity: 0.7;
+		}
+
+		#himg1{
+			left: 30px;
+		}
+
+		#himg2{
+			right: 30px;
+		}
+
+		#himg{
+			position: absolute;
+			left: 50%;
+			transform: translate(-50%, 0%);
+			z-index: 1;
+		}
+		.bt-click{
+			font-family: 'LeferiPoint-WhiteObliqueA';
+			text-decoration: none;
+			 width: 100px;
+			 color: #97FFF9;
+			 font-size: 1.5rem;
+			  line-height: 1.5;
+			 background-color: black;
+			 padding: 12px;
+			 text-decoration: none;
+			 text-align: center;
+			 border: 1px solid #97FFF9;
+			 border-radius: 0.6em;
+			 cursor: pointer;
+			 
+			position: absolute;
+			left: 50%;
+			top: 700px;
+			transform: translate(-50%, 0%);
+			animation: fadein 1s linear;
+
+			 }		
+
+
+		.bt-click:hover{
+			background-color: #97FFF9;
+			color: black;
+			 transition: 0.7s;
+		}
+
+		.vol-1{
+			position: absolute;
+			left: -80px;
+			top: 200px;
+			animation: pulse 1s infinite;
+		}
+
+		.vol-1-1{
+			position: absolute;
+			left: -80px;
+			top: 461px;
+			animation: pulse 1s infinite;
+
+		}
+
+
+		.vol-2{
+			position: absolute;
+			right: -80px;
+			top: 200px;
+			animation: pulse 1s infinite;
+		}
+
+		.vol-2-1{
+			position: absolute;
+			right: -80px;
+			top: 461px;
+			animation: pulse 1s infinite;
+		}
+
+		.bird-img{
+			position: absolute;
+			width: 687px;
+			height: 558px;
+			left: 50%;
+			top: 0px;
+			transform: translate(-50%, 0%);
+			z-index: 20;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div id="header">
+		<div id="introText"><img src="head.svg"></div>
+		<div id="footer">Copyright by chaeyeonLee</div>
+		<img id="himg1" src="himg1.svg">
+		<img id="himg2" src="himg2.svg">
+		<img id="himg" src="himg3.svg">
+		<a id="btClick" class="bt-click">click</a>
+	</div>
+	<div id="container">
+	<div id="text1">대부분 빠르고 강렬한 인생을 원하죠</div>
+	<div id="ticker1" class="ticker" data-speed="2" data-gap="0">
+			<p><span>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -</span></p>
+
+	</div>
+	<div id="ticker2" class="ticker" data-speed="1" data-gap="610">
+			<p><span>빠르고 강렬한 인생은 우리를 자극시키고 더 큰 강렬함을 갈구하게 해요   </span></p>
+
+	</div>
+	<div id="ticker3" class="ticker" data-speed="1" data-gap="1387">
+			<p><span>빠르고 강렬한 인생은 우리를 자극시키고 더 큰 강렬함을 갈구하게 해요   </span></p>
+	</div>
+	<div id="ticker4" class="ticker" data-speed="1" data-gap="270">
+			<p><span>빠르고 강렬한 인생은 우리를 자극시키고 더 큰 강렬함을 갈구하게 해요</span></p>
+	</div>
+	<img id="vol1" class="vol-1" src="volume1.svg">
+	<img id="vol11" class="vol-1-1" src="volume1.svg">
+	<img id="vol2" class="vol-2" src="volume1.svg">
+	<img id="vol21" class="vol-2-1" src="volume1.svg">
+	<img id="birdImg" class="bird-img" src="tree.png">
+	<img id="waterImg" class="bird-img" src="water.png">
+	</div>
+
+
+	<script type="text/javascript">
+		bhTicker("ticker",4);
+
+
+// 1.ticker4가 첫 시작할때 중간에 끊김 현상 있음 2.고속도로(ticker1) 애니메이션이 한번만 먹음
+
+		
+		container.style.display = "none";
+		text1.style.display = "none";
+		ticker1.style.display = "none";
+		ticker2.style.display = "none";
+		ticker3.style.display = "none";
+		ticker4.style.display = "none";
+		vol1.style.display = "none";
+		vol11.style.display = "none";
+		vol2.style.display = "none";
+		vol21.style.display = "none";
+		birdImg.style.display = "none";
+		waterImg.style.display = "none";
+
+
+		var audio1 = new Audio('backbgm.mp3');
+
+		btClick.onclick = function(){
+			container.style.display = "block";
+			ticker1.style.display = "block";
+			header.remove();
+			document.body.style.backgroundImage = "none";
+			setTimeout(function(){
+			audio1.play();
+			text1.style.display = "block";
+			setTimeout(function(){
+			text1.innerText = "앞이 뻥 뚫린, 마치 이 고속도로같은 삶처럼.";
+			ticker1.style.animation = "fadeout20 1s linear";
+
+			setTimeout(function(){
+		ticker2.style.display = "block";
+		ticker3.style.display = "block";
+		ticker4.style.display = "block";
+		vol1.style.display = "block";
+		vol11.style.display = "block";
+		vol2.style.display = "block";
+		vol21.style.display = "block";
+		},2000)
+		},4000)
+
+		},1000)	
+			
+		} 
+
+		// w1 = false;
+		// w2 = false;
+		// w3 = false;
+
+
+		ticker2.onmouseover = function(){
+			
+			ticker2.style.backgroundColor = "#97FFF9";
+			ticker2.style.color = "black";
+			// document.body.style.backgroundImage = "url('changeimg1.svg')";
+			// document.body.style.backgroundSize = "cover";
+			// document.body.style.backgroundRepeat = "no-repeat";
+
+		}
+
+		var www1 = function(){
+			
+			ticker2.style.backgroundColor = "black";
+			ticker2.style.color = "#97FFF9";
+			console.log("okay");
+			document.body.style.backgroundImage = "none";
+			
+		}
+
+		ticker2.addEventListener('mouseout', www1);
+
+
+		ticker2.onclick = function(){
+
+			ticker2.removeEventListener('mouseout', www1);
+			var audio2 = new Audio('1-4.wav');
+			audio1.pause();
+			ticker1.style.animation = "tickerfadeout 3s linear";
+			birdImg.style.display = "block";
+			volstop();
+			audio2.play();
+			setTimeout(function(){
+			audio2.pause();
+			audio1.play();
+			volstart();
+			
+			birdImg.style.display = "none";
+			text1.innerText = "방금 소리를 들었나요?";
+
+
+			},3200);
+
+			w1 = true;
+			console.log("dd")
+			ticker2.style.backgroundColor = "#97FFF9";
+			ticker2.style.color = "black";
+			ticker2.style.fontSize = "3" + "rem";
+			ticker2.innerText = "멈춤은 때로는";
+		}
+
+		ticker3.onmouseover = function(){
+			console.log("ff");
+			ticker3.style.backgroundColor = "#97FFF9";
+			ticker3.style.color = "black";
+		}
+
+		var www2 = function(){
+			
+					ticker3.style.backgroundColor = "black";
+					ticker3.style.color = "#97FFF9";
+			console.log("okay");
+		}
+
+		ticker3.addEventListener('mouseout', www2);
+
+		ticker3.onclick = function(){
+
+		ticker3.removeEventListener('mouseout', www2);
+		var audio3 = new Audio('2.wav');
+			audio1.pause();
+			ticker1.style.animation = "tickerfadeout 3s linear";
+			waterImg.style.display = "block";
+			volstop();
+			audio3.play();
+			setTimeout(function(){
+			audio3.pause();
+			audio1.play();
+			volstart();
+			
+			waterImg.style.display = "none";
+			text1.innerText = "멈춘 순간에 귀기울여보세요";
+
+
+			},3200);
+
+			w1 = true;
+			console.log("dd")
+
+			ticker3.style.backgroundColor = "#97FFF9";
+			ticker3.style.color = "black";
+			ticker3.style.fontSize = "3" + "rem";
+			ticker3.innerText = "새로운 발견을";
+
+		}
+
+		ticker4.onmouseover = function(){
+		
+			ticker4.style.backgroundColor = "#97FFF9";
+			ticker4.style.color = "black";
+		}
+
+		var www3 = function(){
+			
+					ticker4.style.backgroundColor = "black";
+					ticker4.style.color = "#97FFF9";
+			console.log("okay");
+		}
+
+		ticker4.addEventListener('mouseout', www3);
+
+		ticker4.onclick = function(){
+
+			ticker4.removeEventListener('mouseout', www3);
+			var audio3 = new Audio('2.wav');
+			audio1.pause();
+			ticker1.style.animation = "tickerfadeout 3s linear";
+			waterImg.style.display = "block";
+			volstop();
+			audio3.play();
+			setTimeout(function(){
+			audio3.pause();
+			audio1.play();
+			volstart();
+			
+			waterImg.style.display = "none";
+			text1.innerText = "멈춘 순간에 귀기울여보세요";
+
+
+			},3200);
+
+			w1 = true;
+			console.log("dd")
+			ticker4.style.backgroundColor = "#97FFF9";
+			ticker4.style.color = "black";
+			ticker4.style.fontSize = "3" + "rem";
+			ticker4.innerText = "만들 수 있어요";
+
+		}
+
+
+
+
+
+	function volstop(){
+		vol1.style.animation = "none";
+		vol11.style.animation = "none";
+		vol2.style.animation = "none";
+		vol21.style.animation = "none";
+	};
+
+	function volstart(){
+		vol1.style.animation = "pulse 1s infinite";
+		vol11.style.animation = "pulse 1s infinite";
+		vol2.style.animation = "pulse 1s infinite";
+		vol21.style.animation = "pulse 1s infinite";
+
+	}
+
+
+
+
+		function bhTicker(cl,speed) {
+	let t = document.getElementsByClassName(cl);
+	let ta = []; let ts=[]; let tg=[]; let tw=[];
+	let container,mover,text,textWidth;
+
+	for(let i=0; i<t.length; i++){
+		container = t[i];
+		mover = container.getElementsByTagName("p").item(0);
+		text = mover.getElementsByTagName("span").item(0);
+
+		// set
+		mover.style.position = "absolute";
+		mover.style.margin = "0 0 0 0";
+		mover.style.left = "0px";
+		mover.leftPosition = 0;
+		mover.style.width = text.childNodes.item(0).length + "em";	// stretch width
+		textWidth = text.offsetWidth;
+
+		let speed2 = t[i].dataset.speed;
+		if (textWidth > container.offsetWidth) {
+			if(speed2 == 1){speed2 = 2};
+			mover.style.width = textWidth * speed2 + "px";
+			
+			for(let k=0;k<speed2;k++){
+				mover.innerHTML += mover.innerHTML;	
+			}
+		}
+
+		tw.push(textWidth);
+		tg.push(t[i].dataset.gap);
+		ts.push(t[i].dataset.speed);
+		ta.push(mover);
+	}
+
+	let tickerAction = function() {
+		for(let j=0;j<ta.length;j++){
+			let speed = parseInt(ts[j]);
+			let gap = parseInt(tg[j]);
+			let tw2 = tw[j];
+
+			if (ta[j].leftPosition * -speed > tw2*speed) {
+				ta[j].leftPosition = -speed;
+			} else {
+				ta[j].leftPosition -= speed;
+			}
+
+			ta[j].style.left = (-gap + ta[j].leftPosition) + "px";
+		}
+		window.requestAnimationFrame(tickerAction);
+	};
+	tickerAction();
+}
+	</script>
+</body>
+</html>
